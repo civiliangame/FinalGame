@@ -54,7 +54,7 @@ public class PlayState extends GameState {
 		populateBones();
 
 		// initialize player
-		player.setTilePosition(17, 17);
+		player.setTilePos(17, 17);
 		player.setTotalBones(bones.size());
 
 		// set up camera position
@@ -78,56 +78,56 @@ public class PlayState extends GameState {
 		Bone d;
 
 		d = new Bone(tileMap);
-		d.setTilePosition(20, 20);
+		d.setTilePos(20, 20);
 		d.addChange(new int[] { 23, 19, 1 });
 		d.addChange(new int[] { 23, 20, 1 });
 		bones.add(d);
 		d = new Bone(tileMap);
-		d.setTilePosition(12, 36);
+		d.setTilePos(12, 36);
 		d.addChange(new int[] { 31, 17, 1 });
 		bones.add(d);
 		d = new Bone(tileMap);
-		d.setTilePosition(28, 4);
+		d.setTilePos(28, 4);
 		d.addChange(new int[] {27, 7, 1});
 		d.addChange(new int[] {28, 7, 1});
 		bones.add(d);
 		d = new Bone(tileMap);
-		d.setTilePosition(4, 34);
+		d.setTilePos(4, 34);
 		d.addChange(new int[] { 31, 21, 1 });
 		bones.add(d);
 
 		d = new Bone(tileMap);
-		d.setTilePosition(28, 19);
+		d.setTilePos(28, 19);
 		bones.add(d);
 		d = new Bone(tileMap);
-		d.setTilePosition(35, 26);
+		d.setTilePos(35, 26);
 		bones.add(d);
 		d = new Bone(tileMap);
-		d.setTilePosition(38, 36);
+		d.setTilePos(38, 36);
 		bones.add(d);
 		d = new Bone(tileMap);
-		d.setTilePosition(27, 28);
+		d.setTilePos(27, 28);
 		bones.add(d);
 		d = new Bone(tileMap);
-		d.setTilePosition(20, 30);
+		d.setTilePos(20, 30);
 		bones.add(d);
 		d = new Bone(tileMap);
-		d.setTilePosition(14, 25);
+		d.setTilePos(14, 25);
 		bones.add(d);
 		d = new Bone(tileMap);
-		d.setTilePosition(4, 21);
+		d.setTilePos(4, 21);
 		bones.add(d);
 		d = new Bone(tileMap);
-		d.setTilePosition(9, 14);
+		d.setTilePos(9, 14);
 		bones.add(d);
 		d = new Bone(tileMap);
-		d.setTilePosition(4, 3);
+		d.setTilePos(4, 3);
 		bones.add(d);
 		d = new Bone(tileMap);
-		d.setTilePosition(20, 14);
+		d.setTilePos(20, 14);
 		bones.add(d);
 		d = new Bone(tileMap);
-		d.setTilePosition(13, 20);
+		d.setTilePos(13, 20);
 		bones.add(d);
 
 	}
@@ -147,8 +147,6 @@ public class PlayState extends GameState {
 		}
 
 		// update camera
-		int oldxs = xsector;
-		int oldys = ysector;
 		xsector = player.getx() / sectorSize;
 		ysector = player.gety() / sectorSize;
 		tileMap.setPosition(-xsector * sectorSize, -ysector * sectorSize);

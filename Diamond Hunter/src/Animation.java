@@ -35,6 +35,9 @@ public class Animation{
 	
 	
 	//Gettter setter methods
+	
+	
+	
 	public void setsquareTile(int i) { 
 		currentsquareTile = i; 
 	}

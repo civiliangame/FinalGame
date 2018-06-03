@@ -1,6 +1,4 @@
 // Loads and splits all sprites on start up.
-// The sprites can easily be accessed as they
-// are public and static.
 
 
 
@@ -12,6 +10,7 @@ import javax.imageio.ImageIO;
 public class Content {
 	
 	
+	//Loading all sprites
 	public static BufferedImage[][] MENU = load("/HUD/menuscreen.gif", 128, 144);
 	
 	public static BufferedImage[][] DOG = load("/Sprites/playersprite.gif", 16, 16);

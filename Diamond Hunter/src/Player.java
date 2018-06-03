@@ -20,9 +20,6 @@ public class Player extends Entity {
 	// gameplay
 	private int numBones;
 	private int totalBones;
-	private boolean hasBoat;
-	private boolean hasAxe;
-	private boolean onWater;
 	private long ticks;
 	
 	public Player(TileMap tilemap) {
@@ -45,21 +42,11 @@ public class Player extends Entity {
 		
 	}
 	
-	private void setAnimation(int i, BufferedImage[] bi, int d) {
-		currentAnimation = i;
-		animation.setsquareTiles(bi);
-		animation.settimeDelay(d);
-	}
 	
 	public void collectedBone() { numBones++; }
 	public int numBones() { return numBones; }
 	public int getTotalBones() { return totalBones; }
 	public void setTotalBones(int i) { totalBones = i; }
-	
-	public void gotBoat() { hasBoat = true; tileMap.replace(22, 4); }
-	public void gotAxe() { hasAxe = true; }
-	public boolean hasBoat() { return hasBoat; }
-	public boolean hasAxe() { return hasAxe; }
 	
 	// Used to update time.
 	public long getTicks() { return ticks; }
@@ -80,18 +67,18 @@ public class Player extends Entity {
 	
 	// Keyboard input.
 	public void setAction() {
-		if(hasAxe) {
-			if(currentAnimation == UP && tileMap.getIndex(rowTile - 1, colTile) == 21) {
-				tileMap.setTile(rowTile - 1, colTile, 1);
+		if(true) {
+			if(currentAnimation == UP && tileMap.getIndex(row - 1, col) == 21) {
+				tileMap.setTile(row - 1, col, 1);
 			}
-			if(currentAnimation == DOWN && tileMap.getIndex(rowTile + 1, colTile) == 21) {
-				tileMap.setTile(rowTile + 1, colTile, 1);
+			if(currentAnimation == DOWN && tileMap.getIndex(row + 1, col) == 21) {
+				tileMap.setTile(row + 1, col, 1);
 			}
-			if(currentAnimation == LEFT && tileMap.getIndex(rowTile, colTile - 1) == 21) {
-				tileMap.setTile(rowTile, colTile - 1, 1);
+			if(currentAnimation == LEFT && tileMap.getIndex(row, col - 1) == 21) {
+				tileMap.setTile(row, col - 1, 1);
 			}
-			if(currentAnimation == RIGHT && tileMap.getIndex(rowTile, colTile + 1) == 21) {
-				tileMap.setTile(rowTile, colTile + 1, 1);
+			if(currentAnimation == RIGHT && tileMap.getIndex(row, col + 1) == 21) {
+				tileMap.setTile(row, col + 1, 1);
 			}
 		}
 	}
@@ -99,17 +86,7 @@ public class Player extends Entity {
 	public void update() {
 		
 		ticks++;
-		
-		// check if on water
-		boolean current = onWater;
-		if(tileMap.getIndex(ydestination / tileSize, xdestination / tileSize) == 4) {
-			onWater = true;
-		}
-		else {
-			onWater = false;
-		}
-		// if going from land to water
-		
+	
 		// update position
 		super.update();
 		
