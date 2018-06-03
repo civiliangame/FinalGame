@@ -10,7 +10,7 @@ import javax.imageio.ImageIO;
 public class Content {
 	
 	
-	//Loading all sprites
+	//Loading all spritess
 	public static BufferedImage[][] MENU = load("/HUD/menuscreen.gif", 128, 144);
 	
 	public static BufferedImage[][] DOG = load("/Sprites/playersprite.gif", 16, 16);
