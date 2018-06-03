@@ -1,9 +1,8 @@
-// The pause GameState can only be activated
-// by calling GameStateManager#setPaused(true).
+
 
 import java.awt.Graphics2D;
 
-
+//Pause screen + instructions tab
 public class PauseState extends GameState {
 	
 	public PauseState(GameStateManager gsm) {
@@ -16,6 +15,8 @@ public class PauseState extends GameState {
 		handleInput();
 	}
 	
+	
+	//Instructions here
 	public void draw(Graphics2D g) {
 		
 		Content.drawString(g, "paused", 40, 30);
@@ -33,6 +34,8 @@ public class PauseState extends GameState {
 		Content.drawString(g, "to menu", 68, 116);
 		
 	}
+	
+	//Handles input from the pause screen
 	public void handleInput() {
 		if(Keys.isPressed(Keys.ESCAPE)) {
 			gamestatemanager.setPaused(false);

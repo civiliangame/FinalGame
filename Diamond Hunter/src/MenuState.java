@@ -1,10 +1,11 @@
-// The main menu GameState.
 
-import java.awt.Graphics2D;
+
 import java.awt.image.BufferedImage;
-
+import java.awt.Graphics2D;
+//The main menu GameState.
 public class MenuState extends GameState {
 	
+	//Variables
 	private BufferedImage bg;
 	private BufferedImage bone;
 	
@@ -14,19 +15,27 @@ public class MenuState extends GameState {
 		"QUIT"
 	};
 	
+	
+	//Constructor
 	public MenuState(GameStateManager gsm) {
 		super(gsm);
 	}
 	
+	
+	//Brings the sprites over from content since it's static
 	public void init() {
 		bg = Content.MENU[0][0];
 		bone = Content.BONE[0][0];
 	}
 	
+	
+	//Updates
 	public void update() {
 		handleInput();
 	}
 	
+	
+	//Draws the bones at the correct locations based on which option the player selects
 	public void draw(Graphics2D g) {
 		
 		g.drawImage(bg, 0, 0, null);
@@ -39,6 +48,7 @@ public class MenuState extends GameState {
 		
 	}
 	
+	//Handles all input
 	public void handleInput() {
 		if(Keys.isPressed(Keys.DOWN) && currentOption < options.length - 1) {
 			currentOption++;
@@ -51,6 +61,7 @@ public class MenuState extends GameState {
 		}
 	}
 	
+	//Select options based on the player's input
 	private void selectOption() {
 		if(currentOption == 0) {
 			gamestatemanager.setState(GameStateManager.PLAY);

@@ -73,6 +73,8 @@ public class PlayState extends GameState {
 
 	}
 
+	
+	//Puts bones in the proper places
 	private void populateBones() {
 
 		Bone d;
@@ -132,15 +134,17 @@ public class PlayState extends GameState {
 
 	}
 
-
+	//updates the game
 	public void update() {
 
 		// check keys
 		handleInput();
 
 		// check events
-		if(eventStart) eventStart();
-		if(eventFinish) eventFinish();
+		if(eventStart) 
+			eventStart();
+		if(eventFinish) 
+			eventFinish();
 
 		if(player.numBones() == player.getTotalBones()) {
 			eventFinish = blockInput = true;
@@ -208,6 +212,8 @@ public class PlayState extends GameState {
 
 	}
 
+	
+	//The game does what the player inputs
 	public void handleInput() {
 		if(Keys.isPressed(Keys.ESCAPE)) {
 			gamestatemanager.setPaused(true);
@@ -217,11 +223,10 @@ public class PlayState extends GameState {
 		if(Keys.isDown(Keys.RIGHT)) player.setRight();
 		if(Keys.isDown(Keys.UP)) player.setUp();
 		if(Keys.isDown(Keys.DOWN)) player.setDown();
-		if(Keys.isPressed(Keys.SPACE)) player.setAction();
 	}
 
-	//===============================================
-
+	
+	//Start the game
 	private void eventStart() {
 		eventTick++;
 		if(eventTick == 1) {
@@ -248,6 +253,8 @@ public class PlayState extends GameState {
 		}
 	}
 
+	
+	//Finish the game
 	private void eventFinish() {
 		eventTick++;
 		if(eventTick == 1) {

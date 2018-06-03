@@ -8,19 +8,20 @@ import java.awt.Graphics2D;
 
 public class GameStateManager {
 	
-	private boolean paused;
-	private PauseState pauseState;
-	
+	//Variables
 	private GameState[] gameStates;
 	private int currentState;
 	private int previousState;
+	private boolean paused;
+	private PauseState pauseState;
+	
+	//Static variables
+	public static final int PLAY = 2;
+	public static final int GAMEOVER = 3;
 	
 	public static final int NUM_STATES = 4;
 	public static final int INTRO = 0;
 	public static final int MENU = 1;
-	public static final int PLAY = 2;
-	public static final int GAMEOVER = 3;
-	
 	public GameStateManager() {
 		
 		paused = false;
@@ -31,6 +32,7 @@ public class GameStateManager {
 		
 	}
 	
+	//Sets the State
 	public void setState(int i) {
 		previousState = currentState;
 		unloadState(previousState);
@@ -53,14 +55,19 @@ public class GameStateManager {
 		}
 	}
 	
+	//Unloads the state
 	public void unloadState(int i) {
 		gameStates[i] = null;
 	}
 	
+	
+	//Pause or unpause the game
 	public void setPaused(boolean b) {
 		paused = b;
 	}
 	
+	
+	//Update the game
 	public void update() {
 		if(paused) {
 			pauseState.update();
@@ -69,7 +76,7 @@ public class GameStateManager {
 			gameStates[currentState].update();
 		}
 	}
-	
+	//Create graphics
 	public void draw(Graphics2D g) {
 		if(paused) {
 			pauseState.draw(g);

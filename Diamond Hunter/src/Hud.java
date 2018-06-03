@@ -1,15 +1,16 @@
-// Contains a reference to the Player.
-// Draws all relevant information at the
-// bottom of the screen.
 
+
+import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
-import java.awt.image.BufferedImage;
-import java.util.ArrayList;
 
+
+//Keeps track of important information
 public class Hud {
 	
+	//Variables
 	private int yoffset;
 	
 	private BufferedImage bone;
@@ -21,6 +22,8 @@ public class Hud {
 	private Font font;
 	private Color textColor; 
 	
+	
+	//Constructor
 	public Hud(Player p, ArrayList<Bone> d) {
 		
 		player = p;
@@ -34,6 +37,8 @@ public class Hud {
 		
 	}
 	
+	
+	//Draw everything
 	public void draw(Graphics2D g) {
 		
 		

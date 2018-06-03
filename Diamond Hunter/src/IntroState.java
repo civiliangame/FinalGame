@@ -1,13 +1,15 @@
-// GameState that shows logo.
 
+import java.awt.image.BufferedImage;
 import java.awt.Color;
 import java.awt.Graphics2D;
-import java.awt.image.BufferedImage;
 
 import javax.imageio.ImageIO;
 
+//GameState that shows logo.
+
 public class IntroState extends GameState {
 	
+	//Variables
 	private BufferedImage logo;
 	
 	private int alpha;
@@ -17,10 +19,14 @@ public class IntroState extends GameState {
 	private final int LENGTH = 60;
 	private final int FADE_OUT = 60;
 	
+	
+	//Constructor
 	public IntroState(GameStateManager gsm) {
 		super(gsm);
 	}
 	
+	
+	//Loads the greenberg (tm) logo
 	public void init() {
 		ticks = 0;
 		try {
@@ -31,6 +37,7 @@ public class IntroState extends GameState {
 		}
 	}
 	
+	//Fade in and fade out like Nintendo
 	public void update() {
 		handleInput();
 		ticks++;
@@ -47,6 +54,8 @@ public class IntroState extends GameState {
 		}
 	}
 	
+	
+	//Draw it
 	public void draw(Graphics2D g) {
 		g.setColor(Color.WHITE);
 		g.fillRect(0, 0, GamePanel.WIDTH, GamePanel.HEIGHT2);

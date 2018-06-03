@@ -8,7 +8,7 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
 public class Player extends Entity {
-	
+
 	// sprites
 	private BufferedImage[] dogSprite;
 	// animation
@@ -16,41 +16,62 @@ public class Player extends Entity {
 	private final int LEFT = 1;
 	private final int RIGHT = 2;
 	private final int UP = 3;
-	
+
 	// gameplay
 	private int numBones;
 	private int totalBones;
 	private long ticks;
-	
+
+
+	//Constructor
 	public Player(TileMap tilemap) {
-		
+
 		super(tilemap);
-		
+
+
+		//Deals with pixels. Width, height, etc
 		w = 16;
 		h = 16;
 		cw = 12;
 		ch = 12;
-		
-		moveSpeed = 2;
-		
+
+		moveSpeed = 1;
+
 		numBones = 0;
-		
+
 		dogSprite = Content.DOG[0];
-		
+
 		animation.setsquareTiles(dogSprite);
 		animation.settimeDelay(10);
-		
+
+	}
+
+
+	//Update the bone count
+	public void collectedBone() { 
+		numBones++;
 	}
 	
+	//Shows how many bones we got
+	public int numBones() {
+		return numBones;
+	}
 	
-	public void collectedBone() { numBones++; }
-	public int numBones() { return numBones; }
-	public int getTotalBones() { return totalBones; }
-	public void setTotalBones(int i) { totalBones = i; }
+	//Total number of bones on the map
+	public int getTotalBones() { 
+		return totalBones;
+	}
 	
+	//Set total number of bones
+	public void setTotalBones(int i) { 
+		totalBones = i;
+	}
+
 	// Used to update time.
-	public long getTicks() { return ticks; }
-	
+	public long getTicks() { 
+		return ticks; 
+	}
+
 	// Keyboard input. Moves the player.
 	public void setDown() {
 		super.setDown();
@@ -64,7 +85,7 @@ public class Player extends Entity {
 	public void setUp() {
 		super.setUp();
 	}
-	
+
 	// Keyboard input.
 	public void setAction() {
 		if(true) {
@@ -82,19 +103,19 @@ public class Player extends Entity {
 			}
 		}
 	}
-	
+
 	public void update() {
-		
+
 		ticks++;
-	
+
 		// update position
 		super.update();
-		
+
 	}
-	
+
 	// Draw Player.
 	public void draw(Graphics2D g) {
 		super.draw(g);
 	}
-	
+
 }
