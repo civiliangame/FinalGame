@@ -1,15 +1,15 @@
 // Congratulations for finishing the game.
 
-import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.Color;
 
 
 public class GameOverState extends GameState {
 	
 	private Color color;
 	
-	public GameOverState(GameStateManager gsm) {
-		super(gsm);
+	public GameOverState(GameStateManager gamestatemanager) {
+		super(gamestatemanager);
 	}
 	
 	public void init() {
@@ -31,7 +31,7 @@ public class GameOverState extends GameState {
 	
 	public void handleInput() {
 		if(Keys.isPressed(Keys.ENTER)) {
-			gsm.setState(GameStateManager.MENU);
+			gamestatemanager.setState(GameStateManager.MENU);
 		}
 	}
 	

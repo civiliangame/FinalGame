@@ -3,12 +3,12 @@
 // keeps the game moving forward.
 // This class is also the one that grabs key events.
 
-import java.awt.Dimension;
-import java.awt.Graphics;
+import java.awt.image.BufferedImage;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
+import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.event.KeyListener;
-import java.awt.image.BufferedImage;
 
 import javax.swing.JPanel;
 
@@ -114,12 +114,17 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 	}
 	
 	// key event
-	public void keyTyped(KeyEvent key) {}
 	public void keyPressed(KeyEvent key) {
 		Keys.keySet(key.getKeyCode(), true);
 	}
 	public void keyReleased(KeyEvent key) {
 		Keys.keySet(key.getKeyCode(), false);
+	}
+
+	@Override
+	public void keyTyped(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

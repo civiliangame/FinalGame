@@ -1,23 +1,22 @@
-// The entry point of the game.
-// This class loads up a JFrame window and
-// puts a GamePanel into it.
 
 import javax.swing.JFrame;
-
+//Game. This is the main class that runs. 
 public class Game {
 	
 	public static void main(String[] args) {
 		
+		//Open up a JFrame and configure 
 		JFrame window = new JFrame("Nolly's Bone Chase");
 		
 		window.add(new GamePanel());
+
+		window.setVisible(true);
+		window.setLocationRelativeTo(null);
+		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		window.setResizable(false);
 		window.pack();
 		
-		window.setLocationRelativeTo(null);
-		window.setVisible(true);
-		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 	}
 	

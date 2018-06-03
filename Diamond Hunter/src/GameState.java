@@ -1,16 +1,13 @@
-// Blueprint for all GameState subclasses.
-// Has a reference to the GameStateManager
-// along with the four methods that must
-// be overridden.
+//Abstract class that has methods that must be implemented
 
 import java.awt.Graphics2D;
 
 public abstract class GameState {
 	
-	protected GameStateManager gsm;
+	protected GameStateManager gamestatemanager;
 	
-	public GameState(GameStateManager gsm) {
-		this.gsm = gsm;
+	public GameState(GameStateManager gamestatemanager) {
+		this.gamestatemanager = gamestatemanager;
 	}
 	
 	public abstract void init();

@@ -210,7 +210,7 @@ public class PlayState extends GameState {
 
 	public void handleInput() {
 		if(Keys.isPressed(Keys.ESCAPE)) {
-			gsm.setPaused(true);
+			gamestatemanager.setPaused(true);
 		}
 		if(blockInput) return;
 		if(Keys.isDown(Keys.LEFT)) player.setLeft();

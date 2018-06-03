@@ -35,11 +35,11 @@ public class PauseState extends GameState {
 	}
 	public void handleInput() {
 		if(Keys.isPressed(Keys.ESCAPE)) {
-			gsm.setPaused(false);
+			gamestatemanager.setPaused(false);
 		}
 		if(Keys.isPressed(Keys.F1)) {
-			gsm.setPaused(false);
-			gsm.setState(GameStateManager.MENU);
+			gamestatemanager.setPaused(false);
+			gamestatemanager.setState(GameStateManager.MENU);
 		}
 	}
 	
